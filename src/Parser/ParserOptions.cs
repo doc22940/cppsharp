@@ -327,14 +327,13 @@ namespace CppSharp.Parser
 
         private void SetupArguments()
         {
-            // do not remove the CppSharp prefix becase the Mono C# compiler breaks
             if (!LanguageVersion.HasValue)
-                LanguageVersion = CppSharp.Parser.LanguageVersion.CPP14_GNU;
+                LanguageVersion = Parser.LanguageVersion.CPP14_GNU;
 
             switch (LanguageVersion)
             {
-                case CppSharp.Parser.LanguageVersion.C99:
-                case CppSharp.Parser.LanguageVersion.C99_GNU:
+                case Parser.LanguageVersion.C99:
+                case Parser.LanguageVersion.C99_GNU:
                     AddArguments("-xc");
                     break;
                 default:
@@ -344,34 +343,34 @@ namespace CppSharp.Parser
 
             switch (LanguageVersion)
             {
-                case CppSharp.Parser.LanguageVersion.C99:
+                case Parser.LanguageVersion.C99:
                     AddArguments("-std=c99");
                     break;
-                case CppSharp.Parser.LanguageVersion.C99_GNU:
+                case Parser.LanguageVersion.C99_GNU:
                     AddArguments("-std=gnu99");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP98:
+                case Parser.LanguageVersion.CPP98:
                     AddArguments("-std=c++98");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP98_GNU:
+                case Parser.LanguageVersion.CPP98_GNU:
                     AddArguments("-std=gnu++98");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP11:
+                case Parser.LanguageVersion.CPP11:
                     AddArguments("-std=c++11");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP11_GNU:
+                case Parser.LanguageVersion.CPP11_GNU:
                     AddArguments("-std=gnu++11");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP14:
+                case Parser.LanguageVersion.CPP14:
                     AddArguments("-std=c++14");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP14_GNU:
+                case Parser.LanguageVersion.CPP14_GNU:
                     AddArguments("-std=gnu++14");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP17:
+                case Parser.LanguageVersion.CPP17:
                     AddArguments("-std=c++1z");
                     break;
-                case CppSharp.Parser.LanguageVersion.CPP17_GNU:
+                case Parser.LanguageVersion.CPP17_GNU:
                     AddArguments("-std=gnu++1z");
                     break;
             }
